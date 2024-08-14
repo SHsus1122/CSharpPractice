@@ -6,20 +6,18 @@ namespace CSharp_Personal_Practice
     {
         public static void Main(string[] args)
         {
-            DynamicArrayPractice<int> dArray = new DynamicArrayPractice<int>();
-            dArray.Add(1);
-            dArray.Add(5);
-            dArray.Add(10);
-            dArray.Add(15);
+            FifoPractice<int> FifoArray = new FifoPractice<int>();
+            FifoArray.Enqueue(1);
+            FifoArray.Enqueue(5);
+            FifoArray.Enqueue(10);
+            FifoArray.Enqueue(15);
 
-            for (int i = 0; i < dArray.Count; i++)
-                Console.WriteLine(dArray[i]);
+            Console.WriteLine("Conatins : " + FifoArray.Contains(15));
+            Console.WriteLine("Peek : " + FifoArray.Peek() + ", Count : " + FifoArray.Count());
 
-            dArray.RemoveAt(1);
-            Console.WriteLine();
-
-            for (int i = 0; i < dArray.Count; i++)
-                Console.WriteLine(dArray[i]);
+            FifoArray.Dequeue();
+            Console.WriteLine("Conatins : " + FifoArray.Contains(15));
+            Console.WriteLine("Peek : " + FifoArray.Peek() + ", Count : " + FifoArray.Count());
         }
     }
 }
